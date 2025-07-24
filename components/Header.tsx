@@ -2,6 +2,7 @@ import { useRouter } from 'expo-router';
 import { House, RotateCcw } from 'lucide-react-native';
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { RFValue } from 'react-native-responsive-fontsize';
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp
@@ -21,10 +22,10 @@ export const Header: React.FC = () => {
         <View style={{flexDirection:"row",alignItems:"center",gap:wp("2%")}}>
         <TouchableOpacity 
         style={styles.buttonContent} 
-        onPress={() => router.navigate('/HomeScreen')}
+        onPress={() => router.navigate('/')}
         activeOpacity={0.8}
       >
-          <House size={23} color={colors.buttonText} />
+          <House size={RFValue(18)} color={colors.buttonText} />
       </TouchableOpacity>
 
         <TouchableOpacity 
@@ -32,7 +33,7 @@ export const Header: React.FC = () => {
         onPress={restart}
         activeOpacity={0.8}
       >
-          <RotateCcw size={23} color={colors.buttonText} />
+          <RotateCcw size={RFValue(18)} color={colors.buttonText} />
       </TouchableOpacity>
         </View>
         <View style={{alignItems:"center"}}>
@@ -46,7 +47,7 @@ export const Header: React.FC = () => {
       <Image source={require('../assets/images/appIconBG.png')} style={styles.logo} />
         <Text style={styles.subtitle}>Join the tiles, get to 2048!</Text>
         <View style={styles.scoreBox}>
-          <Text style={[styles.scoreLabel,{fontSize:16}]}>Your Score</Text>
+          <Text style={[styles.scoreLabel,{fontSize:RFValue(14)}]}>Your Score</Text>
           <Text style={styles.scoreValue}>{gameState.score}</Text>
         </View>
       </View>
@@ -64,40 +65,33 @@ const styles = StyleSheet.create({
   
   titleContainer: {
     alignItems: 'center',
-    marginVertical:hp("3%")
+    marginVertical:hp("1%")
   },
   logo:{
-    height:wp("35%"),
-    width:wp("35%"),
+    height:wp("30%"),
+    width:wp("30%"),
   },
   
   subtitle: {
-    fontSize: 16,
+    fontSize: RFValue(14),
     color: "#3a2d5f",
     opacity: 0.8,
   },
   
-  scoreContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    gap: 12,
-    marginBottom: 20,
-  },
-  
+
   scoreBox: {
 marginTop:hp("2%"),
     alignItems: 'center',
   },
   
   scoreLabel: {
-    fontSize: 12,
+    fontSize: RFValue(12),
     fontWeight: '600',
     color: "#4b3979",
-    marginBottom: 4,
   },
   
   scoreValue: {
-    fontSize: 20,
+    fontSize: RFValue(20),
     fontWeight: 'bold',
     color: "#4b3979",
   },
@@ -105,11 +99,8 @@ marginTop:hp("2%"),
   
   buttonContent: {
    backgroundColor:"#4b3979",
-   padding:wp("3%"),
+   padding:12,
    borderRadius:wp("2%")
   },
-  
-  restartText: {
-    fontSize: 14,
-  },
+
 });

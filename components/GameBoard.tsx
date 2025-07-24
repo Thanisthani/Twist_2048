@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { runOnJS } from 'react-native-reanimated';
 
@@ -11,7 +11,7 @@ import { globalStyles } from '../styles/theme';
 import { Direction } from '../types';
 import { Tile } from './Tile';
 
-const { width: screenWidth } = Dimensions.get('window');
+
 const BOARD_PADDING = wp("4%");
 const TILE_MARGIN = wp("2%");
 const BOARD_SIZE = wp("92%");

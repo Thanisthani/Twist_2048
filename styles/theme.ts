@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 export const colors = {
   background: '#faf8ef',
@@ -75,7 +76,7 @@ export const globalStyles = StyleSheet.create({
   
   buttonText: {
     color: colors.buttonText,
-    fontSize: 16,
+    fontSize: RFValue(16),
     fontWeight: '600',
     textAlign: 'center',
   },

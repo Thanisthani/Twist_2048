@@ -1,6 +1,8 @@
 import { RotateCcw, Trophy } from 'lucide-react-native';
 import React from 'react';
 import { Modal, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { RFValue } from 'react-native-responsive-fontsize';
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import { useGame } from '../context/GameContext';
 import { colors, globalStyles } from '../styles/theme';
 
@@ -50,7 +52,7 @@ export const GameOverModal: React.FC = () => {
             activeOpacity={0.8}
           >
             <View style={styles.buttonContent}>
-              <RotateCcw size={18} color={colors.buttonText} />
+              <RotateCcw size={RFValue(14)} color={colors.buttonText} />
               <Text style={[globalStyles.buttonText, styles.buttonText]}>
                 Try Again
               </Text>
@@ -68,23 +70,24 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 20,
+    paddingHorizontal: wp("4%"),
   },
   
   modal: {
     backgroundColor: "#f4f2f9",
     borderRadius: 16,
-    padding: 32,
+    padding: wp("4%"),
     alignItems: 'center',
-    minWidth: 280,
+    minWidth: wp("70%"),
   },
   
   iconContainer: {
-    marginBottom: 20,
+    marginBottom: hp("2%"),
+    marginTop: hp("1%"),
   },
   
   title: {
-    fontSize: 28,
+    fontSize: RFValue(22),
     fontWeight: 'bold',
     color: "#4b3979",
     marginBottom: 8,
@@ -92,7 +95,7 @@ const styles = StyleSheet.create({
   },
   
   subtitle: {
-    fontSize: 16,
+    fontSize: RFValue(13),
     color: "#4b3979",
     opacity: 0.8,
     marginBottom: 24,
@@ -106,30 +109,31 @@ const styles = StyleSheet.create({
   },
   
   scoreLabel: {
-    fontSize: 14,
+    fontSize: RFValue(14),
     fontWeight: '600',
     color: "#4b3979",
     opacity: 0.8,
-    marginBottom: 4,
+    marginBottom: hp("1%"),
   },
   
   scoreValue: {
-    fontSize: 32,
+    fontSize: RFValue(25),
     fontWeight: 'bold',
     color:  "#4b3979",
   },
   
   restartButton: {
-    minWidth: 140,
+    minWidth: wp("50%"),
   },
   
   buttonContent: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 8,
+    justifyContent: 'center',
+    gap: wp("2%"),
   },
   
   buttonText: {
-    fontSize: 16,
+    fontSize: RFValue(14),
   },
 });

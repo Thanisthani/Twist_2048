@@ -5,8 +5,8 @@ export default function NotFoundScreen() {
   return (
     <>
       <Stack.Screen options={{ title: 'Oops!' }} />
-        <Link href="/HomeScreen" style={styles.link}>
-        Go to home screen!
+        <Link href="/" style={styles.link}>
+        Go to Game screen!
         </Link>
     </>
   );

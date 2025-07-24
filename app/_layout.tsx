@@ -23,7 +23,7 @@ export default function RootLayout() {
         <GestureHandlerRootView style={{ flex: 1 }}>
           <GameProvider>
         <Stack>
-        <Stack.Screen name="HomeScreen" options={{ headerShown: false }} />
+        <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="GameScreen" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
 

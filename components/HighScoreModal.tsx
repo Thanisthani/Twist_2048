@@ -3,6 +3,8 @@ import { globalStyles } from '@/styles/theme';
 import { Trophy, X as XIcon } from 'lucide-react-native';
 import React from 'react';
 import { Modal, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { RFValue } from 'react-native-responsive-fontsize';
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
 
 interface HighScoreModalProps {
     isOpen: boolean;
@@ -29,7 +31,6 @@ const HighScoreModal = ({ isOpen, onClose }: HighScoreModalProps) => {
           <Text style={styles.title}>High Score!</Text>
           <Text style={styles.subtitle}>Your best score so far</Text>
           <View style={styles.scoreContainer}>
-            <Text style={styles.scoreLabel}>Best</Text>
             <Text style={styles.scoreValue}>{gameState.bestScore}</Text>
           </View>
         </View>
@@ -44,14 +45,14 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 20,
+    paddingHorizontal: wp("4%"),
   },
   modal: {
     backgroundColor: "#f4f2f9",
     borderRadius: 16,
-    padding: 32,
+    padding: wp("4%"),
     alignItems: 'center',
-    minWidth: 280,
+    minWidth: wp("70%"),
     position: 'relative',
   },
   closeButton: {
@@ -62,18 +63,18 @@ const styles = StyleSheet.create({
     padding: 4,
   },
   iconContainer: {
-    marginBottom: 20,
-    marginTop: 8,
+    marginBottom: hp("2%"),
+    marginTop: hp("1%"),
   },
   title: {
-    fontSize: 28,
+    fontSize: RFValue(22),
     fontWeight: 'bold',
     color: "#4b3979",
-    marginBottom: 8,
+    marginVertical: hp("1%"),
     textAlign: 'center',
   },
   subtitle: {
-    fontSize: 16,
+    fontSize: RFValue(13),
     color: "#4b3979",
     opacity: 0.8,
     marginBottom: 24,
@@ -82,17 +83,10 @@ const styles = StyleSheet.create({
   },
   scoreContainer: {
     alignItems: 'center',
-    marginBottom: 8,
   },
-  scoreLabel: {
-    fontSize: 14,
-    fontWeight: '600',
-    color: "#4b3979",
-    opacity: 0.8,
-    marginBottom: 4,
-  },
+
   scoreValue: {
-    fontSize: 32,
+    fontSize: RFValue(25),
     fontWeight: 'bold',
     color: "#4b3979",
   },
