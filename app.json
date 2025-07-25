@@ -4,7 +4,7 @@
     "slug": "Twist_2048",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/appIcon.png",
+    "icon": "./assets/images/adaptive-icon.png",
     "scheme": "twist2048",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,7 +13,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/appIcon.png",
+        "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
@@ -42,14 +42,14 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "624d3822-b8db-4f40-b32c-6289ccaab9c6"
+        "projectId": "a34bb4e7-3f7d-484a-8f97-e96574d5edd6"
       }
     },
     "runtimeVersion": {
       "policy": "appVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/624d3822-b8db-4f40-b32c-6289ccaab9c6"
+      "url": "https://u.expo.dev/a34bb4e7-3f7d-484a-8f97-e96574d5edd6"
     }
   }
 }
