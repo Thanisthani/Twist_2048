@@ -1,16 +1,14 @@
 import { useGame } from '@/context/GameContext'
 import { useRouter } from 'expo-router'
 import { StatusBar } from 'expo-status-bar'
-import { Crown } from 'lucide-react-native'
 import React, { useState } from 'react'
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { RFValue } from 'react-native-responsive-fontsize'
+import { StyleSheet } from 'react-native'
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp
 } from 'react-native-responsive-screen'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import HighScoreModal from '../components/HighScoreModal'
+import { WebView } from 'react-native-webview'
 import { globalStyles } from '../styles/theme'
 const index = () => {
   const [showHighScore, setShowHighScore] = useState(false);
@@ -29,7 +27,7 @@ const index = () => {
     <>
       <StatusBar style='dark' />
       <SafeAreaView style={[globalStyles.container, styles.container]}>
-        <TouchableOpacity style={[styles.iconBG,globalStyles.shadow]} onPress={handleScoreBoard} activeOpacity={0.85}>
+        {/* <TouchableOpacity style={[styles.iconBG,globalStyles.shadow]} onPress={handleScoreBoard} activeOpacity={0.85}>
         <Crown size={RFValue(20)} color="#4b3979" />
         </TouchableOpacity>
         <View style={styles.centered}>
@@ -46,7 +44,20 @@ const index = () => {
               </TouchableOpacity>
           </View>
 
-        <HighScoreModal isOpen={showHighScore} onClose={handleCloseHighScore} />
+        <HighScoreModal isOpen={showHighScore} onClose={handleCloseHighScore} /> */}
+             <WebView
+              source={{ uri: "https://youtu.be/43R9l7EkJwE?si=EC8YPKsf_EYo1KQ2"}}
+              style={styles.webview}
+              startInLoadingState={true}
+              javaScriptEnabled={true}
+              domStorageEnabled={true}
+              onLoadStart={() => console.log('WebViewOverlay: Loading started')}
+              onLoadEnd={() => console.log('WebViewOverlay: Loading ended')}
+              onError={(syntheticEvent) => {
+                const { nativeEvent } = syntheticEvent;
+                console.error('WebViewOverlay: Error loading URL:', nativeEvent);
+              }}
+            />
       </SafeAreaView>
     </>
   )
@@ -54,8 +65,13 @@ const index = () => {
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    width: '100%',
+    height: '100%',
+  },
+  webview: {
+    flex: 1,
   },
   centered: {
     flex: 1,
